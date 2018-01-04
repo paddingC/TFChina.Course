@@ -1,0 +1,12 @@
+E:\SourceCode\tfChina\Course\tfChina.Course\Framework\TFChina.Course.Data\bin\Debug\TFChina.Course.Data.dll.config
+E:\SourceCode\tfChina\Course\tfChina.Course\Framework\TFChina.Course.Data\bin\Debug\TFChina.Course.Data.dll
+E:\SourceCode\tfChina\Course\tfChina.Course\Framework\TFChina.Course.Data\bin\Debug\TFChina.Course.Data.pdb
+E:\SourceCode\tfChina\Course\tfChina.Course\Framework\TFChina.Course.Data\bin\Debug\EntityFramework.dll
+E:\SourceCode\tfChina\Course\tfChina.Course\Framework\TFChina.Course.Data\bin\Debug\EntityFramework.SqlServer.dll
+E:\SourceCode\tfChina\Course\tfChina.Course\Framework\TFChina.Course.Data\bin\Debug\EntityFramework.xml
+E:\SourceCode\tfChina\Course\tfChina.Course\Framework\TFChina.Course.Data\bin\Debug\EntityFramework.SqlServer.xml
+E:\SourceCode\tfChina\Course\tfChina.Course\Framework\TFChina.Course.Data\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\SourceCode\tfChina\Course\tfChina.Course\Framework\TFChina.Course.Data\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\SourceCode\tfChina\Course\tfChina.Course\Framework\TFChina.Course.Data\obj\Debug\TFChina.Course.Data.csproj.CoreCompileInputs.cache
+E:\SourceCode\tfChina\Course\tfChina.Course\Framework\TFChina.Course.Data\obj\Debug\TFChina.Course.Data.dll
+E:\SourceCode\tfChina\Course\tfChina.Course\Framework\TFChina.Course.Data\obj\Debug\TFChina.Course.Data.pdb

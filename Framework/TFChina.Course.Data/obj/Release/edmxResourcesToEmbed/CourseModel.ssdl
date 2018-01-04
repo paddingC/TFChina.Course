@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TFChina.Course.Data.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="CourseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="64" />
+    <Property Name="CategoryColor" Type="nvarchar" MaxLength="64" />
+    <Property Name="Region" Type="nvarchar" MaxLength="64" />
+    <Property Name="Group" Type="nvarchar" MaxLength="64" />
+    <Property Name="CourseCode" Type="nvarchar" MaxLength="64" />
+    <Property Name="CourseName" Type="nvarchar" MaxLength="64" />
+    <Property Name="CourseDetail" Type="nvarchar" MaxLength="1024" />
+    <Property Name="Lecturer" Type="nvarchar" MaxLength="64" />
+    <Property Name="LecturerDetail" Type="nvarchar" MaxLength="1024" />
+    <Property Name="Date" Type="date" />
+    <Property Name="StartTime" Type="nvarchar" MaxLength="32" />
+    <Property Name="EndTime" Type="nvarchar" MaxLength="32" />
+    <Property Name="ClassHour" Type="int" />
+    <Property Name="MaxNumber" Type="int" />
+    <Property Name="Class" Type="nvarchar" MaxLength="64" />
+    <Property Name="Sector" Type="nvarchar" MaxLength="64" />
+    <Property Name="Career" Type="nvarchar" MaxLength="64" />
+    <Property Name="MainTeacher" Type="bit" />
+  </EntityType>
+  <EntityType Name="CourseUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="CourseID" Type="int" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Account" Type="nvarchar" MaxLength="64" />
+    <Property Name="Name" Type="nvarchar" MaxLength="64" />
+    <Property Name="Password" Type="nvarchar" MaxLength="128" />
+    <Property Name="Region" Type="nvarchar" MaxLength="64" />
+    <Property Name="Province" Type="nvarchar" MaxLength="64" />
+    <Property Name="City" Type="nvarchar" MaxLength="64" />
+    <Property Name="County" Type="nvarchar" MaxLength="64" />
+    <Property Name="Sector" Type="nvarchar" MaxLength="64" />
+    <Property Name="IsMainTeacher" Type="bit" />
+    <Property Name="IsAdmin" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="TFChinaCourseDataStoreContainer">
+    <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CourseUser" EntityType="Self.CourseUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

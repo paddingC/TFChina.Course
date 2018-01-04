@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TFChina.Course.Data.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="CourseID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Category" Type="nvarchar" MaxLength="64" />
+          <Property Name="CategoryColor" Type="nvarchar" MaxLength="64" />
+          <Property Name="Region" Type="nvarchar" MaxLength="64" />
+          <Property Name="Group" Type="nvarchar" MaxLength="64" />
+          <Property Name="CourseCode" Type="nvarchar" MaxLength="64" />
+          <Property Name="CourseName" Type="nvarchar" MaxLength="64" />
+          <Property Name="CourseDetail" Type="nvarchar" MaxLength="1024" />
+          <Property Name="Lecturer" Type="nvarchar" MaxLength="64" />
+          <Property Name="LecturerDetail" Type="nvarchar" MaxLength="1024" />
+          <Property Name="Date" Type="date" />
+          <Property Name="StartTime" Type="nvarchar" MaxLength="32" />
+          <Property Name="EndTime" Type="nvarchar" MaxLength="32" />
+          <Property Name="ClassHour" Type="int" />
+          <Property Name="MaxNumber" Type="int" />
+          <Property Name="Class" Type="nvarchar" MaxLength="64" />
+          <Property Name="Sector" Type="nvarchar" MaxLength="64" />
+          <Property Name="Career" Type="nvarchar" MaxLength="64" />
+          <Property Name="MainTeacher" Type="bit" />
+        </EntityType>
+        <EntityType Name="CourseUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="CourseID" Type="int" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Account" Type="nvarchar" MaxLength="64" />
+          <Property Name="Name" Type="nvarchar" MaxLength="64" />
+          <Property Name="Password" Type="nvarchar" MaxLength="128" />
+          <Property Name="Region" Type="nvarchar" MaxLength="64" />
+          <Property Name="Province" Type="nvarchar" MaxLength="64" />
+          <Property Name="City" Type="nvarchar" MaxLength="64" />
+          <Property Name="County" Type="nvarchar" MaxLength="64" />
+          <Property Name="Sector" Type="nvarchar" MaxLength="64" />
+          <Property Name="IsMainTeacher" Type="bit" />
+          <Property Name="IsAdmin" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="TFChinaCourseDataStoreContainer">
+          <EntitySet Name="Course" EntityType="Self.Course" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CourseUser" EntityType="Self.CourseUser" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TFChina.Course.Data" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="CourseDbContext" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CourseUsers" EntityType="TFChina.Course.Data.CourseUser" />
+          <EntitySet Name="Users" EntityType="TFChina.Course.Data.User" />
+          <EntitySet Name="Courses" EntityType="TFChina.Course.Data.Course" />
+        </EntityContainer>
+        <EntityType Name="CourseUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="CourseID" Type="Int32" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Account" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Region" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Province" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="County" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Sector" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="IsMainTeacher" Type="Boolean" />
+          <Property Name="IsAdmin" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Course">
+          <Key>
+            <PropertyRef Name="CourseID" />
+          </Key>
+          <Property Name="CourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Category" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryColor" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Region" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Group" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="CourseCode" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="CourseName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="CourseDetail" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="Lecturer" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="LecturerDetail" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="StartTime" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="EndTime" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+          <Property Name="ClassHour" Type="Int32" />
+          <Property Name="MaxNumber" Type="Int32" />
+          <Property Name="Class" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Sector" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="Career" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+          <Property Name="MainTeacher" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TFChinaCourseDataStoreContainer" CdmEntityContainer="CourseDbContext">
+          <EntitySetMapping Name="CourseUsers">
+            <EntityTypeMapping TypeName="TFChina.Course.Data.CourseUser">
+              <MappingFragment StoreEntitySet="CourseUser">
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="TFChina.Course.Data.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="IsAdmin" ColumnName="IsAdmin" />
+                <ScalarProperty Name="IsMainTeacher" ColumnName="IsMainTeacher" />
+                <ScalarProperty Name="Sector" ColumnName="Sector" />
+                <ScalarProperty Name="County" ColumnName="County" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Province" ColumnName="Province" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Account" ColumnName="Account" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Courses">
+            <EntityTypeMapping TypeName="TFChina.Course.Data.Course">
+              <MappingFragment StoreEntitySet="Course">
+                <ScalarProperty Name="MainTeacher" ColumnName="MainTeacher" />
+                <ScalarProperty Name="Career" ColumnName="Career" />
+                <ScalarProperty Name="Sector" ColumnName="Sector" />
+                <ScalarProperty Name="Class" ColumnName="Class" />
+                <ScalarProperty Name="MaxNumber" ColumnName="MaxNumber" />
+                <ScalarProperty Name="ClassHour" ColumnName="ClassHour" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="LecturerDetail" ColumnName="LecturerDetail" />
+                <ScalarProperty Name="Lecturer" ColumnName="Lecturer" />
+                <ScalarProperty Name="CourseDetail" ColumnName="CourseDetail" />
+                <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+                <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+                <ScalarProperty Name="Group" ColumnName="Group" />
+                <ScalarProperty Name="Region" ColumnName="Region" />
+                <ScalarProperty Name="CategoryColor" ColumnName="CategoryColor" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="CourseID" ColumnName="CourseID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

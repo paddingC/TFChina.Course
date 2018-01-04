@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TFChina.Course.Data" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="CourseDbContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CourseUsers" EntityType="TFChina.Course.Data.CourseUser" />
+    <EntitySet Name="Users" EntityType="TFChina.Course.Data.User" />
+    <EntitySet Name="Courses" EntityType="TFChina.Course.Data.Course" />
+  </EntityContainer>
+  <EntityType Name="CourseUser">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="CourseID" Type="Int32" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Account" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Region" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Province" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="City" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="County" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Sector" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="IsMainTeacher" Type="Boolean" />
+    <Property Name="IsAdmin" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Course">
+    <Key>
+      <PropertyRef Name="CourseID" />
+    </Key>
+    <Property Name="CourseID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="CategoryColor" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Region" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Group" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="CourseCode" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="CourseName" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="CourseDetail" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="Lecturer" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="LecturerDetail" Type="String" MaxLength="1024" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <Property Name="StartTime" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="EndTime" Type="String" MaxLength="32" FixedLength="false" Unicode="true" />
+    <Property Name="ClassHour" Type="Int32" />
+    <Property Name="MaxNumber" Type="Int32" />
+    <Property Name="Class" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Sector" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="Career" Type="String" MaxLength="64" FixedLength="false" Unicode="true" />
+    <Property Name="MainTeacher" Type="Boolean" />
+  </EntityType>
+</Schema>
